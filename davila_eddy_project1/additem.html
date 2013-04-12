@@ -1,0 +1,87 @@
+<!-- Eddy Davila -->
+<!-- Project 1 -->
+<!-- Visual Frameworks -->
+<!-- Term 1304 -->
+
+
+
+<!DOCTYPE html>
+<!-- HTML TAG -->
+<html>
+    <!-- head -->
+    <head>
+        <!-- meta tags -->
+        <meta charset="utf-8" />
+        <meta name="description" content="My HTML Document"/>
+        <meta name="keywords" content="html5, mobile development, Full Sail University" />
+        <!-- Search Engine Robots allowed to index page and follow links -->
+        <meta name="robots" content="index, follow" />
+        <!--Allows content to be sized correctly regardless of the device-->
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <!-- Older phones and devices -->
+        <meta name="HandheldFriendly" content="true" />
+        <!--Mobile optimized -->
+        <meta name="MobileOptimized" content="320" />
+       <!--Document title -->
+        <title> Inventory</title>
+        
+     <!-- Body -->
+    <body>
+        <h1>Add Guitar</h1>
+        <form action="#" method="post"> <!-- form -->
+            <fieldset>
+                <legend>Guitar Purchase Details</legend>
+                <ul>
+                    <li><label for="Client">Client's Name:</label><input type="text" id="Client" /></li>
+                    <li><label for="Brand">Brand:</label><input type="text" id="Brand" /></li>
+                    <li><label for="skuNum">SKU Number:</label><input type="pass" id="skuNum" /></li>
+                    <li><label for="confirmSKU">Confirm SKU Number[disabled]:</label><input type="pass" id="confirmSKU" disabled /></li>
+                    <li><label for="date">Date of Purchase:</label><input type="date" id="date" /></li>
+                    <li><label for="email">Client's Email:</label><input type="email" id="email" placeholder="myemail@email.com" /></li>
+                     <li><label for="url"> Brand's Website:</label><input type="url" placeholder="www.brand.com" /></li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>FAQ</legend>
+                <ul>
+                    <li>Most Popular Brands:
+                        <ul>
+                            <li><input type="checkbox" checked value="BCRICH" id="BC Rich"/><label for="BCRICH">BCRich</label></li>
+                            <li><input type="checkbox" value="IBANEZ" id="Ibanez"/><label for="IBANEZ">Ibanez</label></li>
+                            <li><input type="checkbox" value="EPIPHONE" id="Epiphone"/><label for="EPIPHONE">Epiphone</label></li>
+                            <li><input type="checkbox" value="MBONE" id="MbOne"/><label for="MBONE">MbOne</label></li>
+                        </ul>
+		    <li><label for="Ranking">Rankin:</label><br /><input type="range" name="ranking" min="1" max ="10" /></li>
+                    </li>
+                    <li>Cash or Credi?:
+                        <ul>
+                            <li><input type="radio"  value="Cash" id="cash"/><label for="cash">Cash</label></li>
+                            <li><input type="radio" value="Credit" id="credit"/><label for="credit">Credit</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label for="brand"> Favorite Brand </label>
+                        <select id="brand">
+                            <optgroup label="Best Brands">
+                                <option value="Ibanez">Ibanez</option>
+                                <option value="BC-Rich">BCRich</option>
+                            </optgroup>
+                            <optgroup label="Average Brands">
+                                <option value="Epiphone">Epiphone</option>
+                                <option value="MBOne">Mbone</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                    <li><label for="feedback">Whats your favorite Brand of guitars?:</label><textarea id="feedback"></textarea></li>
+                    <li><input type="hidden" value"true" /></li>
+                </ul>
+            </fieldset>
+            <input type="Enter" value="Send" />
+        </form>
+        <ul>
+            <li><a href="#">Show Data</a></li>
+	    <li><a href="#">Clear Data</a></li>
+	</ul>
+        <body link="green" vlink="green">
+    </body>
+</html>
