@@ -1,7 +1,5 @@
-var clientField = document.getElementById("Client");
-
-console.log(clientField);
 
 
-var tags = document.getElementsByTagName("li");
-console.log(tags);
+
+var textInput = document.getElementById("client");
+console.log(textInput);
