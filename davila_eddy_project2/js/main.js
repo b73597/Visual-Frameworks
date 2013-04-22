@@ -1,8 +1,7 @@
-/* 
-	Marco Rodriguez -->
-  	06-07-12 -->
- 	Project 2 -->
-	VFW 1206 -- >
+/*
+<!-- Eddy Davila -->
+<!-- Project 3 -->
+<!-- VFW 1304 -- >
 */
 // Javascript file 
 
