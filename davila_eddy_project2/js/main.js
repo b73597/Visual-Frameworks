@@ -1,7 +1,8 @@
 /* 
-<!-- Eddy Davila -->
-<!-- Project 3 -->
-<!-- VFW 1304 -- >	
+	Marco Rodriguez -->
+  	06-07-12 -->
+ 	Project 2 -->
+	VFW 1206 -- >
 */
 // Javascript file 
 
@@ -138,7 +139,7 @@ function toggleControls(n){
 	function getData(){
 		toggleControls("on");
 		if(localStorage.length ===0){
-			alert("No data in local storage."); 
+			alert("There is no data in local storage."); 
 		}
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id", "items");
@@ -148,7 +149,6 @@ function toggleControls(n){
 		$('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len; i++){
 			var makeli = document.createElement('li');
-			var linksLi = document.createElement('li');
 			makeList.appendChild(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
@@ -161,36 +161,10 @@ function toggleControls(n){
 			makeSublist.appendChild(makeSubli);
 			var optSubText = obj[n][0]+" "+obj[n][1];
 			makeSubli.innerHTML = optSubText;
-			makeSublist.appendChild(linksLi);
-		}
-		makeItemLinks(localStorage.key(i), linksLi); // Create edit/ delte buttons/links for e/item in Local Storage.
+		} 
 	}
 }
-//Make Item Links
-//Create edit and delte links.
-function makeItemLinks(key, linksLi) {
-	//add edit single link
-	var editLink = document.createElement('a');
-	editLink.href = "#";
-	editLink.key = key;
-	var editText = "Edit Guitar Transaction";
-	//editLink.addEventListener("click", editItem);
-	editLink.innerHTML = editText;
-	linksLi.appendChild(editLink);
-	
-	// add linebreak
-	var breakTag = document.createElement('br');
-	linksLi.appendChild(breakTag);
-	
-	//add delete single link
-	var deleteLink = document.createElement('a');
-	deleteLink.href = "#";
-	deleteLink.key = key;
-	var deleteText = "Delete Guitar Transaction";
-	//delete.addEventListener("click" , deleteItem);
-	deleteLink.innerHTML = deleteText;
-	linksLi.appendChild(deleteLink);
-}
+
 	// clear local data
 
 function clearLocal(){

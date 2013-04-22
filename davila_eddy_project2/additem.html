@@ -1,93 +1,75 @@
-<!-- Eddy Davila -->
-<!-- Project 1 -->
-<!-- Visual Frameworks -->
-<!-- Term 1304 -->
-
-
-
 <!DOCTYPE html>
-<!-- HTML TAG -->
-<html>
-    <!-- head -->
-    <head>
-        <!-- meta tags -->
-        <meta charset="utf-8" />
-        <meta name="description" content="My HTML Document"/>
-        <meta name="keywords" content="html5, mobile development, Full Sail University" />
-        <!-- Search Engine Robots allowed to index page and follow links -->
-        <meta name="robots" content="index, follow" />
-        <!--Allows content to be sized correctly regardless of the device-->
-        <meta name="viewport" content="user-scalable=no, width=device-width" />
-        <!-- Older phones and devices -->
-        <meta name="HandheldFriendly" content="true" />
-        <!--Mobile optimized -->
-        <meta name="MobileOptimized" content="320" />
+<!-- Marco Rodriguez -->
+<!-- 06-07-12 -->
+<!-- Project 2 -->
+<!-- VFW 1206 -- >
+
+<!-- head  -->	
+<head>
+	<!-- meta  -->
+	<meta charset="utf-8">  
+	<meta name="description" content="Helping you secure your money." />  
+	<meta name="keywords" content="Guitar Center, Guitarists, Music" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="user-scalable=no, width=device-width" />
+<!-- title of my page -->        
+<title>Customer Information</title>
 	<link href="css/style.css" rel="stylesheet" />
-	
-       <!--Document title -->
-        <title> Inventory</title>
-        
-     <!-- Body -->
-    <body>
-	
-        <h1><a href="">Add Guitar</a></h1>
-    
-        <form action="#" method="post"> <!-- form -->
-            <fieldset>
-                <legend>Guitar Purchase Details</legend>
-                <ul>
-                    <li><label for="client">Client's Name:</label><input type="text" id="client" /></li>
-                    <li><label for="Brand">Brand:</label><input type="text" id="Brand" /></li>
-                    <li><label for="skuNum">SKU Number:</label><input type="pass" id="skuNum" /></li>
-                    <li><label for="confirmSKU">Confirm SKU Number[disabled]:</label><input type="pass" id="confirmSKU" disabled /></li>
-                    <li><label for="date">Date of Purchase:</label><input type="date" id="date" /></li>
-                    <li><label for="email">Client's Email:</label><input type="email" id="email" placeholder="myemail@email.com" /></li>
-                    <li><label for="url"> Brand's Website:</label><input type="url" placeholder="www.brand.com" /></li>
-                </ul>
-            </fieldset>
-            <fieldset>
-                <legend>FAQ</legend>
-                <ul>
-                    <li>Most Popular Brands:
-                        <ul>
-                            <li><input type="checkbox" checked value="BCRICH" id="BC Rich"/><label for="BCRICH">BCRich</label></li>
-                            <li><input type="checkbox" value="IBANEZ" id="Ibanez"/><label for="IBANEZ">Ibanez</label></li>
-                            <li><input type="checkbox" value="EPIPHONE" id="Epiphone"/><label for="EPIPHONE">Epiphone</label></li>
-                            <li><input type="checkbox" value="MBONE" id="MbOne"/><label for="MBONE">MbOne</label></li>
-                        </ul>
-		    <li><label for="Ranking">Rankin:</label><br /><input type="range" name="ranking" min="1" max ="10" /></li>
-                    </li>
-                    <li>Cash or Credi?:
-                        <ul>
-                            <li><input type="radio"  value="Cash" id="cash"/><label for="cash">Cash</label></li>
-                            <li><input type="radio" value="Credit" id="credit"/><label for="credit">Credit</label></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <label for="brand"> Favorite Brand </label>
-                        <select id="brand">
-                            <optgroup label="Best Brands">
-                                <option value="Ibanez">Ibanez</option>
-                                <option value="BC-Rich">BCRich</option>
-                            </optgroup>
-                            <optgroup label="Average Brands">
-                                <option value="Epiphone">Epiphone</option>
-                                <option value="MBOne">Mbone</option>
-                            </optgroup>
-                        </select>
-                    </li>
-                    <li><label for="feedback">Whats your favorite Brand of guitars?:</label><textarea id="feedback"></textarea></li>
-                    <li><input type="hidden" value"true" /></li>
-                </ul>
-            </fieldset>
-            <input type="button" value="Send" />
-        </form>
-        <ul>
-            <li><a href="#">Show Data</a></li>
-	    <li><a href="#">Clear Data</a></li>
-	</ul>
-         <!-- Orgininal point reduction, Meant to have a Green visited link rather and a Blue visited link for code below-->
-	<!--link="green" vlink="green"> -->
-	<script src="js/eddy_davila_p2.js" type="text/javascript"></script>
-    </body>
+
+<!-- head end -->
+</head>
+	<body>
+		<!-- body  -->        
+		<h1>Guitar Sales</h1>
+		<!-- form -->
+			<a href="#" id="clear" class="bttn" >Cleared Info</a>
+			<a href="#" id="displayLink" class="bttn" >Display Info</a>
+			<a href="addItem.html" id="addNew" style="display:none;">Add New Brand</a>
+				<br />
+				<br />
+		<form action="#" method="post" id="contactForm">
+		<fieldset>
+			<legend>Customer Information</legend>
+				<ul>
+					<!-- textfields -->
+					<li><label for="fname">First Name:</label><input type="text" id="fname" class="input"  /></li>
+					<li><label for="lname">Last Name:</label><input type="text" id="lname" class="input"  /></li>
+					<li><label for="email">Email:</label><input type="email" id="email" placeholder="email@email.com" class="input"  /></li>
+					<li><label for="date">Purchase Date:</label><input type="date" id="date" min="01-01-2013" max="12-31-2020" placeholder="10-10-2013" class="input" /></li>
+				 </ul>
+		</fieldset>
+		<fieldset>
+			<legend>Guitar Information</legend>
+				<ul>
+				       <li><label for="guitar">Brand:</label><input type="text" id="guitar" class="input"  /></li>
+				       <li><label for="store">Retailer:</label><input type="text" id="store" placeholder="Guitar Center, Sam Ash, Victor's Music" class="input" /></li>
+				       <li><label for="rating">Ranking:</label><input id="rating" type="range" min="0" max="10"></li>
+			       </ul>
+				<ul>
+					<li id="pickups"><label for="pickups">Recommended Pick Ups</em></small></label><br /></li>
+					<li id="strings"><label for="strings"><br />Recommended Strings </em></small></label><br /></li>
+					<li id="effect"><label for="effect"><br />Recommended Effects</em></small></label><br /></li>
+				</ul>
+				<ul class="checkbox">
+					<li>Cash or Credit</li>
+					<!-- radio buttons -->
+					<li><input type="radio" checked value="Cash" id="cash" name="currency" /><label for="cash">Cash</label></li>
+					<li><input type="radio" value="Credit" id="credit" name="currency" /><label for="credit">Credit</label></li>
+				</ul>
+				<ul>
+					<!-- check boxes -->			
+					<li>Have a coupon?</li>
+					<li><input type="checkbox" id="coupon" value="Yes" class="checkbox" /><label for="ltech">Coupon?</label></li>
+				</ul>
+				<ul>
+					<li><label for="comments">Additional Information:</label><textarea id="comments"></textarea></li>
+				</ul>	
+		</fieldset>
+		<!-- submit button -->
+		<input type="submit" value="Save Contact" id="submit" class="button"/>
+	</form>
+	<!-- form ends -->
+	<script src="js/main.js" type="text/javascript"></script>
+	</body>
+<!-- body ends -->
 </html>
