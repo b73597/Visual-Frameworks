@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id", "addon");
 
-		for(var i=0, f=addon.length; i<f; i++){ // loop thru our variable data
+		for(var i=0, f=addon.length; i<f; i++){ // loop thru our variable
 			var makeOption = document.createElement('option');
 			var optText = addon[i];
 			makeOption.setAttribute("value", addon[i]);
@@ -111,8 +111,12 @@ function toggleControls(n){
 }
 
 // stores object data
-	function storeData(){
-	var id = Math.floor(Math.random()*100000001); 
+	function storeData(key){
+		if (!key) {
+	var id = Math.floor(Math.random()*100000001);
+	}else{
+		id = key;
+	}
 	getSelectedRadio();  
 	getCheckboxValue(); 
 	var item  				= {};
@@ -240,13 +244,13 @@ function editItem(){
 		var ask = confirm("Are you sure you want to delete?");
 		if(ask){
 			localStorage.removeItem(this.key);
-			alert("Contact was deleted!");
+			alert("Purchase info deleted!");
 			window.location.reload();
 		}else{
-			alert("Contact was not deleted.");
+			alert("Purchase was not deleted.");
 		}
 	}	
-	// clear local data ------------------------------------------
+	
 
 function clearLocal(){
 	if(localStorage.length === 0){
@@ -266,7 +270,7 @@ function clearLocal(){
 		var getLname = $('lname');
 		var getEmail = $('email');
 
-		// need input border 
+		// "need input" border 
 		errMsg.innerHTML = "";
 			getFname.style.border = "1px solid black";
 			getLname.style.border = "1px solid black";
@@ -280,7 +284,7 @@ function clearLocal(){
 			getFname.style.border = "1px solid red";
 			messageArry.push(fNameError);
 		}
-		// last name validation
+		// Last name validation
 		if(getLname.value === ""){
 			var lNameError = "Please enter your Last Name."
 			getLname.style.border = "1px solid red";
@@ -289,9 +293,9 @@ function clearLocal(){
 		// email validation
 		var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		if(!(re.exec(getEmail.value))){
-			var emailError = "Please enter a valid email address.";
+			var invalidEmail = "Please enter a valid email address.";
 			getEmail.style.border = "1px solid red";
-			messageArry.push(emailError);
+			messageArry.push(invalidEmail);
 		}
 		if(messageArry.length >= 1){
 			for(var i =0, j=messageArry.length; i < j; i++){
@@ -314,7 +318,8 @@ function clearLocal(){
 		xtra = ["--Strings--", "Nickel", "Elixir", "Ernie Ball"],
 		effects = ["--Effects--", "Distortion", "Delay", "Reverb"],
 		currencyValue // value
-		siteValue = "No" //page value 
+		siteValue = "No" //page value
+		errMsg = $('errors');
 		;
 
 	// Calling Drop-Down functions
@@ -330,6 +335,6 @@ function clearLocal(){
 	clearLink.addEventListener("click", clearLocal);
 	// submits stored data event 
 	var save = $("submit");
-	save.addEventListener("click", storeData);
+	save.addEventListener("click", validate); // IF  I CHANGE TO storeData I CAN SAVE. IF I LEAVE IT AS "validate" IT ONLY VALIDATES.
 
 });
