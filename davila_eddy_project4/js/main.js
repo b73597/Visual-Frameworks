@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		for(var i=0, f=addon.length; i<f; i++){ // loop thru our variable
 			var makeOption = document.createElement('option');
 			var optText = addon[i];
-			makeOption.setAttribute("value", addon[i]);
+			makeOption.setAttribute("value", optText);
 			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
 		}	
@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		for(var i=0, h=xtra.length; i<h; i++){ // loop variable data
 			var makeOption = document.createElement("option");
 			var optText = xtra[i];
-			makeOption.setAttribute("value", xtra[i]);
+			makeOption.setAttribute("value", optText);
 			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
 		}	
@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		for(var i=0, a=effects.length; i<a; i++){ // loop thru our variable data
 			var makeOption = document.createElement('option');
 			var optText = effects[i];
-			makeOption.setAttribute("value", effects[i]);
+			makeOption.setAttribute("value", optText);
 			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
 		}	
@@ -93,17 +93,17 @@ function toggleControls(n){
 	switch(n){
 		case "on":
 			$('contactForm').style.display  = "none";
-			$('clear').style.display 		= "inline";
+			$('clear').style.display 	= "inline";
 			$('displayLink').style.display 	= "none";
-			$('addNew').style.display 		= "inline";
+			$('addNew').style.display 	= "inline";
 			break;
 				// off
 		case "off":
 			$('contactForm').style.display  = "block";
-			$('clear').style.display 		= "inline";
+			$('clear').style.display 	= "inline";
 			$('displayLink').style.display 	= "inline";
-			$('addNew').style.display 		= "none";
-			$('items').style.display 		= "none";
+			$('addNew').style.display 	= "none";
+			$('items').style.display 	= "none";
 			break;
 		default:
 			return false;		
@@ -157,9 +157,12 @@ function toggleControls(n){
 			makeList.appendChild(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
+			
 			var obj = JSON.parse(value);
 			var makeSublist = document.createElement('ul');
 			makeli.appendChild(makeSublist);
+			// When function getImage is un-commented; json data stops working
+			//getImage(obj.effects[1],makeSubList);
 
 		for(var n in obj){
 			var makeSubli = document.createElement('li');
@@ -171,6 +174,15 @@ function toggleControls(n){
 		makeItemLinks(localStorage.key(i), linksLi); // Create edit/ delte buttons/links for e/item in Local Storage.
 	}
 }
+//Get Image for corret category
+// get image
+	function getImage(catName, makeSubList){
+		var imageLi = document.createElement('li');
+		makeSubList.appendChild(imageLi);
+		var newImg = document.createElement('img');
+		var setSrc = newImg.setAttribute("src", "img/"+ catName + ".png");
+		imageLi.appendChild(newImg);
+	}
 
 // Auto Fill
 function autoFillData() {

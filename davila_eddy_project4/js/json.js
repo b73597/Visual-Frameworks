@@ -1,3 +1,8 @@
+/* 
+<!-- Eddy Davila -->
+<!-- Project 3 -->
+<!-- VFW 1305 -- >
+*/
 var json = {
 	"contact1" : {
 		"fname": ["First Name:", "Aida"],
