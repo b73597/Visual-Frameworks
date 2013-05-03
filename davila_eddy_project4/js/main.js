@@ -1,7 +1,7 @@
 /* 
 <!-- Eddy Davila -->
 <!-- Project 3 -->
-<!-- VFW 1304 -- >	
+<!-- VFW 1305 -- >	
 */
 // Javascript file 
 
